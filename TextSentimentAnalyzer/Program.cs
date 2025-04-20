@@ -90,7 +90,7 @@ while (running == true)
             if(language == "Čeština")
             {
                 panel = new Panel(@"
-                [bold]Aplikace: Texto analyzátor[/]
+                [bold]Název: Texto analyzátor[/]
                 [bold]Verze: 1.0.0[/]
                 [bold]Autor: Michal Helgert[/]
                 [bold]Popis: Konzolová aplikace pro analýzu sentimentu textu - zdali je pozitivní či negativní[/]
@@ -108,7 +108,7 @@ while (running == true)
             else
             {
                 panel = new Panel(@"
-                [bold]Aplikace: Text Analyzer TM[/]
+                [bold]Name: Text Analyzer TM[/]
                 [bold]Version: 1.0.0[/]
                 [bold]Author: Michal Helgert[/]
                 [bold]Description: A console application for simple text sentiment analysis[/]
@@ -140,10 +140,12 @@ while (running == true)
             break;
         case "Ukončit aplikaci" or "Exit application":
             running = false;
-            Thread.Sleep(200);
             AnsiConsole.Clear();
-            AnsiConsole.MarkupLine("[bold green]Byeeee! :)[/]");
-            Thread.Sleep(2500);
+            AnsiConsole.Write(
+            new FigletText("Byeeee")
+            .Centered()
+            .Color(Color.Green));
+            Thread.Sleep(2600);
             break;
         default:
             break;
